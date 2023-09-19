@@ -33,12 +33,11 @@ jobs:
     - name: Generate Documentation
       run: |
         mkdocs build -d webpage --clean
-        cp -r webpage/* site
     
     - name: Upload Pages Artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: site/
+        path: webpage/
         retention-days: 1
         
   deploy:
